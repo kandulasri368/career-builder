@@ -1,15 +1,25 @@
 {
   "files": {
-    "main.css": "/career-builder/static/css/main.153d6bf4.css",
-    "main.js": "/career-builder/static/js/main.4b981216.js",
-    "static/js/453.8708b5fe.chunk.js": "/career-builder/static/js/453.8708b5fe.chunk.js",
+    "main.css": "/career-builder/static/css/main.f38736ab.css",
+    "main.js": "/career-builder/static/js/main.a5806c62.js",
+    "static/js/453.77d75ffa.chunk.js": "/career-builder/static/js/453.77d75ffa.chunk.js",
+    "static/media/fa-solid-900.ttf": "/career-builder/static/media/fa-solid-900.2582b0e4bcf85eceead0.ttf",
+    "static/media/resume.pdf": "/career-builder/static/media/resume.78b33b79d41a53b02772.pdf",
+    "static/media/fa-brands-400.ttf": "/career-builder/static/media/fa-brands-400.1815e00441357e01619e.ttf",
+    "static/media/fa-solid-900.woff2": "/career-builder/static/media/fa-solid-900.2463b90d9a316e4e5294.woff2",
+    "static/media/fa-brands-400.woff2": "/career-builder/static/media/fa-brands-400.c210719e60948b211a12.woff2",
+    "static/media/fa-regular-400.ttf": "/career-builder/static/media/fa-regular-400.914997e1bdfc990d0897.ttf",
+    "static/media/profile-image.jpg": "/career-builder/static/media/profile-image.731e244e576e6871a628.jpg",
+    "static/media/fa-regular-400.woff2": "/career-builder/static/media/fa-regular-400.89999bdf5d835c012025.woff2",
+    "static/media/fa-v4compatibility.ttf": "/career-builder/static/media/fa-v4compatibility.da94ef451f4969af06e6.ttf",
+    "static/media/fa-v4compatibility.woff2": "/career-builder/static/media/fa-v4compatibility.ea8f94e1d22e0d35ccd4.woff2",
     "index.html": "/career-builder/index.html",
-    "main.153d6bf4.css.map": "/career-builder/static/css/main.153d6bf4.css.map",
-    "main.4b981216.js.map": "/career-builder/static/js/main.4b981216.js.map",
-    "453.8708b5fe.chunk.js.map": "/career-builder/static/js/453.8708b5fe.chunk.js.map"
+    "main.f38736ab.css.map": "/career-builder/static/css/main.f38736ab.css.map",
+    "main.a5806c62.js.map": "/career-builder/static/js/main.a5806c62.js.map",
+    "453.77d75ffa.chunk.js.map": "/career-builder/static/js/453.77d75ffa.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.153d6bf4.css",
-    "static/js/main.4b981216.js"
+    "static/css/main.f38736ab.css",
+    "static/js/main.a5806c62.js"
   ]
 }
