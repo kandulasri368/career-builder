@@ -5,133 +5,179 @@ const Certifications = () => {
   const certifications = [
     {
       id: 1,
-      title: 'AWS Solution Architect Associate',
-      issuer: 'Amazon Web Services',
-      date: '2023',
-      description: 'Validates technical expertise in designing and deploying scalable systems on AWS.',
-      skills: ['Cloud Architecture', 'AWS Services', 'Solution Design', 'Best Practices'],
-      image: '',
-      color: '#FF9900'
+      title: "AWS Solution Architect Associate",
+      issuer: "Amazon Web Services",
+      date: "June 2022",
+      description: "Validates expertise in designing and deploying scalable systems on AWS.",
+      skills: ["Cloud Architecture", "AWS Services", "Infrastructure Design"],
+      logo: "aws"
     },
     {
       id: 2,
-      title: 'IBWave Level 1 Certified',
-      issuer: 'iBwave Solutions',
-      date: '2022',
-      description: 'Certification in indoor wireless network design and planning using iBwave Design software.',
-      skills: ['Indoor Wireless Design', 'RF Planning', 'Network Architecture', 'Signal Propagation'],
-      image: '',
-      color: '#00A9E0'
+      title: "IBWave Level 1 Certified",
+      issuer: "iBwave Solutions",
+      date: "February 2022",
+      description: "Professional certification in RF design for in-building wireless systems.",
+      skills: ["In-Building RF Design", "Signal Propagation", "DAS Planning"],
+      logo: "ibwave"
     },
     {
       id: 3,
-      title: 'Level 1 Corning Certified',
-      issuer: 'Corning',
-      date: '2022',
-      description: 'Certification in fiber optic installation, troubleshooting, and maintenance.',
-      skills: ['Fiber Optics', 'Cabling', 'Installation', 'Testing'],
-      image: '',
-      color: '#1B75BC'
+      title: "Level 1 Corning Certified",
+      issuer: "Corning",
+      date: "November 2021",
+      description: "Specialized training in fiber optic system design and implementation.",
+      skills: ["Fiber Optic Systems", "Network Infrastructure", "System Installation"],
+      logo: "corning"
     },
     {
       id: 4,
-      title: 'TEKO DAS Installation and Commissioning',
-      issuer: 'JMA Wireless',
-      date: '2021',
-      description: 'Specialized training in distributed antenna systems installation and commissioning.',
-      skills: ['DAS', 'RF Installation', 'Commissioning', 'Troubleshooting'],
-      image: '',
-      color: '#EE3124'
+      title: "TEKO DAS Installation and Commissioning",
+      issuer: "JMA Wireless",
+      date: "September 2021",
+      description: "Certification for distributed antenna system installation and commissioning.",
+      skills: ["DAS Installation", "RF Commissioning", "System Testing"],
+      logo: "jma"
     },
     {
       id: 5,
-      title: 'Level 1 SOLID ENGINEER',
-      issuer: 'SOLiD',
-      date: '2021',
-      description: 'Certification in SOLiD DAS engineering, installation and maintenance.',
-      skills: ['DAS Design', 'RF Engineering', 'System Configuration', 'Testing'],
-      image: '',
-      color: '#004A87'
+      title: "Level 1 SOLID ENGINEER",
+      issuer: "SOLiD",
+      date: "August 2021",
+      description: "Professional certification for SOLiD DAS engineering and implementation.",
+      skills: ["DAS Engineering", "RF Planning", "System Integration"],
+      logo: "solid"
     },
     {
       id: 6,
-      title: 'Cisco Certified Network Associate (CCNA)',
-      issuer: 'Cisco',
-      date: '2020',
-      description: 'Routing and Switching certification (CCNA R&S) that validates the ability to install, configure, and operate network infrastructure.',
-      skills: ['Network Fundamentals', 'Routing Protocols', 'Network Security', 'Troubleshooting'],
-      image: '',
-      color: '#1BA0D7'
+      title: "Cisco Certified Network Associate (CCNA)",
+      issuer: "Cisco",
+      date: "May 2020",
+      description: "Fundamental networking certification covering routing, switching, and network implementation.",
+      skills: ["Network Configuration", "Routing Protocols", "Network Security"],
+      logo: "cisco"
     }
   ];
 
   return (
     <div className="certifications-page">
       <div className="container">
-        <h1 className="section-title">Certifications</h1>
-        
         <div className="certifications-intro">
+          <h1 className="section-title">Professional Certifications</h1>
           <p>
-            I am committed to continuous professional development and have obtained several industry-recognized certifications that validate my expertise in telecommunications, networking, and cloud technologies.
+            I continuously enhance my skills through professional certifications that validate my expertise
+            in RF engineering, telecommunications, and related technologies. These certifications represent
+            my commitment to maintaining industry-relevant knowledge and skills.
           </p>
         </div>
         
         <div className="certifications-grid">
           {certifications.map(cert => (
             <div className="certification-card" key={cert.id}>
-              <div className="certification-header" style={{backgroundColor: cert.color}}>
-                {cert.image ? (
-                  <img src={cert.image} alt={cert.title} className="cert-logo" />
-                ) : (
-                  <div className="cert-icon">
-                    <i className="fas fa-certificate"></i>
-                  </div>
-                )}
-              </div>
-              <div className="certification-body">
-                <h3 className="cert-title">{cert.title}</h3>
-                <div className="cert-issuer">
-                  <span>{cert.issuer}</span>
-                  <span className="cert-date">{cert.date}</span>
+              <div className="certification-logo">
+                <div className={`logo-placeholder ${cert.logo}-logo`}>
+                  <i className={`fas ${
+                    cert.logo === 'aws' ? 'fa-cloud' :
+                    cert.logo === 'ibwave' ? 'fa-broadcast-tower' :
+                    cert.logo === 'corning' ? 'fa-network-wired' :
+                    cert.logo === 'jma' ? 'fa-broadcast-tower' :
+                    cert.logo === 'solid' ? 'fa-signal' :
+                    cert.logo === 'cisco' ? 'fa-server' : 'fa-certificate'
+                  }`}></i>
                 </div>
-                <p className="cert-description">{cert.description}</p>
-                <div className="cert-skills">
-                  {cert.skills.map((skill, index) => (
-                    <span className="skill-tag" key={index}>{skill}</span>
-                  ))}
+              </div>
+              
+              <div className="certification-content">
+                <h2 className="certification-title">{cert.title}</h2>
+                
+                <div className="certification-meta">
+                  <div className="issuer">
+                    <i className="fas fa-building"></i>
+                    <span>{cert.issuer}</span>
+                  </div>
+                  <div className="issue-date">
+                    <i className="fas fa-calendar-alt"></i>
+                    <span>{cert.date}</span>
+                  </div>
+                </div>
+                
+                <p className="certification-description">{cert.description}</p>
+                
+                <div className="certification-skills">
+                  <h3>Key Skills</h3>
+                  <div className="skills-tags">
+                    {cert.skills.map((skill, index) => (
+                      <span className="skill-tag" key={index}>{skill}</span>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
           ))}
         </div>
         
-        <div className="certifications-additional">
-          <h2>Professional Development</h2>
+        <div className="professional-memberships">
+          <h2 className="section-subtitle">Professional Memberships</h2>
+          <div className="memberships-grid">
+            <div className="membership-item">
+              <div className="membership-icon">
+                <i className="fas fa-users"></i>
+              </div>
+              <div className="membership-details">
+                <h3>IEEE Communications Society</h3>
+                <p>Member since 2018</p>
+              </div>
+            </div>
+            
+            <div className="membership-item">
+              <div className="membership-icon">
+                <i className="fas fa-satellite-dish"></i>
+              </div>
+              <div className="membership-details">
+                <h3>5G Americas</h3>
+                <p>Associate Member since 2021</p>
+              </div>
+            </div>
+            
+            <div className="membership-item">
+              <div className="membership-icon">
+                <i className="fas fa-network-wired"></i>
+              </div>
+              <div className="membership-details">
+                <h3>Telecommunications Industry Association</h3>
+                <p>Professional Network Member</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div className="continuing-development">
+          <h2 className="section-subtitle">Ongoing Professional Development</h2>
           <p>
-            In addition to formal certifications, I regularly participate in workshops, training programs, and industry conferences to stay updated with the latest advancements in telecommunications and RF engineering.
+            I am currently pursuing additional certifications to further enhance my expertise in 5G technologies,
+            RF optimization, and cloud infrastructure for telecommunications. Continuous learning is essential
+            in the rapidly evolving field of wireless communications.
           </p>
           
-          <div className="development-areas">
-            <div className="development-area">
-              <div className="area-icon">
-                <i className="fas fa-broadcast-tower"></i>
+          <div className="upcoming-certifications">
+            <div className="upcoming-cert">
+              <div className="upcoming-icon">
+                <i className="fas fa-satellite"></i>
               </div>
-              <h3>5G Technology</h3>
-              <p>Advanced training in 5G network planning, deployment, and optimization techniques.</p>
-            </div>
-            <div className="development-area">
-              <div className="area-icon">
-                <i className="fas fa-code"></i>
+              <div className="upcoming-details">
+                <h3>5G Technology Architecture and Deployment</h3>
+                <p>Expected completion: Q3 2023</p>
               </div>
-              <h3>Programming</h3>
-              <p>Continuous development in Python, MATLAB, and other technical tools for RF analysis and automation.</p>
             </div>
-            <div className="development-area">
-              <div className="area-icon">
+            
+            <div className="upcoming-cert">
+              <div className="upcoming-icon">
                 <i className="fas fa-cloud"></i>
               </div>
-              <h3>Cloud Technologies</h3>
-              <p>Ongoing education in cloud services and their applications in modern telecommunications infrastructure.</p>
+              <div className="upcoming-details">
+                <h3>AWS Advanced Networking Specialty</h3>
+                <p>In progress</p>
+              </div>
             </div>
           </div>
         </div>

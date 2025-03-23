@@ -1,70 +1,126 @@
-# Getting Started with Create React App
+# RF Engineer Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, responsive portfolio website tailored for RF Engineers and telecommunications professionals. This site showcases skills, experience, projects, and certifications with interactive and visually appealing components.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Responsive Design**: Optimized for all device sizes from mobile to desktop
+- **Dark/Light Mode**: Toggle between light and dark themes
+- **Interactive Portfolio**: Filterable projects with infographic visualizations
+- **Professional Resume**: Detailed work history with printable format
+- **Education Timeline**: Visual representation of academic journey
+- **Certifications Showcase**: Highlight professional credentials
+- **Modern UI Components**: Navbar, interactive cards, and animated elements
 
-### `npm start`
+## Technical Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- React 18
+- React Router 6
+- CSS3 with custom properties (variables)
+- FontAwesome for icons
+- Responsive design with media queries
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Getting Started
 
-### `npm test`
+### Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Node.js (v14 or higher)
+- npm or yarn
 
-### `npm run build`
+### Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone this repository:
+```
+git clone https://github.com/yourusername/rf-engineer-portfolio.git
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Navigate to the project directory:
+```
+cd rf-engineer-portfolio
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Install the dependencies:
+```
+npm install
+```
+or
+```
+yarn install
+```
 
-### `npm run eject`
+4. Start the development server:
+```
+npm start
+```
+or
+```
+yarn start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+5. Open [http://localhost:3000](http://localhost:3000) in your browser to view the site
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Customization
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Changing Personal Information
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Edit the data in each component file (Home.js, Resume.js, etc.) to reflect your experience
+- Replace placeholder infographics with your own images if desired
+- Update contact information in the Footer component
 
-## Learn More
+### Styling
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Color scheme can be modified in App.css by changing the CSS variables
+- Component-specific styles are in their respective CSS files
+- Responsive breakpoints can be adjusted in the media queries
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Deployment
 
-### Code Splitting
+This site can be deployed to various platforms:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Build for Production
 
-### Analyzing the Bundle Size
+```
+npm run build
+```
+or
+```
+yarn build
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+This creates an optimized production build in the `build` folder.
 
-### Making a Progressive Web App
+### Deploy to GitHub Pages
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+1. Install gh-pages:
+```
+npm install --save-dev gh-pages
+```
 
-### Advanced Configuration
+2. Add homepage to package.json:
+```json
+"homepage": "https://yourusername.github.io/rf-engineer-portfolio"
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+3. Add deploy scripts to package.json:
+```json
+"scripts": {
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d build",
+  ...
+}
+```
 
-### Deployment
+4. Deploy:
+```
+npm run deploy
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## License
 
-### `npm run build` fails to minify
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Acknowledgments
+
+- FontAwesome for the icon library
+- React community for the excellent documentation
+- Telecommunications industry resources for reference 

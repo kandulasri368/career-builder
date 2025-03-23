@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import ThemeToggle from './ThemeToggle';
 import './Navbar.css';
 
-const Navbar = () => {
+const Navbar = ({ darkMode, toggleDarkMode }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
@@ -27,54 +26,69 @@ const Navbar = () => {
     };
   }, []);
 
-  // Close mobile menu when route changes
   useEffect(() => {
+    // Close mobile menu when route changes
     setIsOpen(false);
   }, [location]);
 
   return (
-    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
+    <header className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="container navbar-container">
         <Link to="/" className="navbar-logo">
-          <span className="highlight">Portfolio</span>
+          <span>Sri Sai Chaithanya Kandula</span>
         </Link>
-        
-        <div className="menu-icon" onClick={toggleMenu}>
-          <div className={`hamburger ${isOpen ? 'active' : ''}`}></div>
+
+        <div className="navbar-right">
+          <button 
+            className={`theme-toggle ${darkMode ? 'dark' : 'light'}`} 
+            onClick={toggleDarkMode}
+            aria-label="Toggle dark mode"
+          >
+            <i className={darkMode ? 'fas fa-sun' : 'fas fa-moon'}></i>
+          </button>
+
+          <button 
+            className={`mobile-menu-btn ${isOpen ? 'open' : ''}`} 
+            onClick={toggleMenu}
+            aria-label="Toggle menu"
+          >
+            <span className="bar"></span>
+            <span className="bar"></span>
+            <span className="bar"></span>
+          </button>
+
+          <nav className={`navbar-menu ${isOpen ? 'active' : ''}`}>
+            <ul className="navbar-nav">
+              <li className="nav-item">
+                <Link to="/" className={location.pathname === '/' ? 'active' : ''}>
+                  Home
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/resume" className={location.pathname === '/resume' ? 'active' : ''}>
+                  Resume
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/portfolio" className={location.pathname === '/portfolio' ? 'active' : ''}>
+                  Portfolio
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/education" className={location.pathname === '/education' ? 'active' : ''}>
+                  Education
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/certifications" className={location.pathname === '/certifications' ? 'active' : ''}>
+                  Certifications
+                </Link>
+              </li>
+            </ul>
+          </nav>
         </div>
-        
-        <ul className={`nav-menu ${isOpen ? 'active' : ''}`}>
-          <li className="nav-item">
-            <Link to="/" className={location.pathname === '/' ? 'nav-link active' : 'nav-link'}>
-              Home
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/resume" className={location.pathname === '/resume' ? 'nav-link active' : 'nav-link'}>
-              Resume
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/portfolio" className={location.pathname === '/portfolio' ? 'nav-link active' : 'nav-link'}>
-              Portfolio
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/certifications" className={location.pathname === '/certifications' ? 'nav-link active' : 'nav-link'}>
-              Certifications
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/education" className={location.pathname === '/education' ? 'nav-link active' : 'nav-link'}>
-              Education
-            </Link>
-          </li>
-          <li className="nav-item theme-toggle-container">
-            <ThemeToggle />
-          </li>
-        </ul>
       </div>
-    </nav>
+    </header>
   );
 };
 
